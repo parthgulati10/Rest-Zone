@@ -68,6 +68,8 @@ app.use("/restaurants", restaurantRoutes);
 app.use("/restaurants/:id/comments", commentRoutes);
 
 
-app.listen(process.env.Port || 4001 , ()=> {
-	console.log('Server  is listening on port 4000');
+var server_port = process.env.YOUR_PORT || process.env.PORT || 4001;
+var server_host = process.env.YOUR_HOST || '0.0.0.0';
+server.listen(server_port, server_host, function() {
+    console.log('Listening on port %d', server_port);
 });
