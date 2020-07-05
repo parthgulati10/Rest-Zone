@@ -97,7 +97,11 @@ router.get("/:id/edit", middleware.checkRestaurantOwnership, function(req, res){
 router.put("/:id", middleware.checkRestaurantOwnership, function(req, res){
 	geocoder.geocode(req.body.location, function (err, data) {
     if (err || !data.length) {
-		if(err)req.flash('error', err);
+		if(err){
+			console.log(err);
+			req.flash('error', err);
+		}
+		
 		else{
       req.flash('error', 'Invalid address');
 		}
