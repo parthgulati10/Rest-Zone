@@ -88,10 +88,10 @@ router.get("/:id", function(req,res){
 router.get("/:id/edit", middleware.checkRestaurantOwnership, function(req, res){
     
              
-            // Restaurant.findById(req.params.id, function(err, foundRestaurant){
-            //      res.render("restaurants/edit", {restaurant: foundRestaurant});
-            // });
-	res.render("restaurants/edit", {restaurant: req.restaurant});
+            Restaurant.findById(req.params.id, function(err, foundRestaurant){
+                 res.render("restaurants/edit", {restaurant: foundRestaurant});
+            });
+	
 });
 
 router.put("/:id", middleware.checkRestaurantOwnership, function(req, res){
