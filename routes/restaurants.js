@@ -96,10 +96,10 @@ router.get("/:id/edit", middleware.checkRestaurantOwnership, function(req, res){
 
 router.put("/:id", middleware.checkRestaurantOwnership, function(req, res){
 	geocoder.geocode(req.body.location, function (err, data) {
-    // if (err || !data.length) {
-    //   req.flash('error', 'Invalid address');
-    //   return res.redirect('back');
-    // }
+    if (err || !data.length) {
+      req.flash('error', 'Invalid address');
+      return res.redirect('back');
+    }
     req.body.restaurant.lat = data[0].latitude;
     req.body.restaurant.lng = data[0].longitude;
     req.body.restaurant.location = data[0].formattedAddress;
