@@ -20,14 +20,14 @@
         <input class="form-control" type="text" value="<%=restaurant.cuisine%>" name="restaurant[cuisine]">
         </div>
 		  <div class="form-group">
-        <input class="form-control" type="text" value="<%=restaurant.address%>" name="address">
+        <input class="form-control" type="text" value="<%=restaurant.address%>" name="restaurant[address]">
         </div>
 		<div class="form-group">
         <input class="form-control" type="text" value="<%=restaurant.description%>" name="restaurant[description]">
         </div>
 		<div class="form-group">
     
-    <input class="form-control" type="text" name="location" id="location" value="<%= restaurant.location %>">
+    <input class="form-control" type="text" name="restaurant[location]" id="location" value="<%= restaurant.location %>">
 </div>
         <div class="form-group">
         <button class="btn btn-lg btn-primary btn-block">Submit</button>
