@@ -67,7 +67,7 @@ app.use("/", indexRoutes);
 app.use("/restaurants", restaurantRoutes);
 app.use("/restaurants/:id/comments", commentRoutes);
 
-
-app.listen(process.env.PORT || 7388 , ()=> {
-	console.log('Server  is listening on port 4000');
+const PORT = process.env.PORT || 7388;
+app.listen(PORT , ()=> {
+	console.log(`Now listening to Request on the chosen ${PORT}`);
 });
