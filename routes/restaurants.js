@@ -88,9 +88,10 @@ router.get("/:id", function(req,res){
 router.get("/:id/edit", middleware.checkRestaurantOwnership, function(req, res){
     
              
-            Restaurant.findById(req.params.id, function(err, foundRestaurant){
-                 res.render("restaurants/edit", {restaurant: foundRestaurant});
-            });
+            // Restaurant.findById(req.params.id, function(err, foundRestaurant){
+            //      res.render("restaurants/edit", {restaurant: foundRestaurant});
+            // });
+	res.render("campgrounds/edit", {restaurant: req.restaurant});
 });
 
 router.put("/:id", middleware.checkRestaurantOwnership, function(req, res){
