@@ -20,11 +20,11 @@ var commentRoutes = require("./routes/comments"),
     restaurantRoutes = require("./routes/restaurants"),
     indexRoutes = require("./routes/index");
 
-
+const databaseUri = process.env.MONGODB_URI;
 
 //mongoose.connect("mongodb://localhost/5000");
 // mongoose.connect("mongodb+srv://parth123:parth123@cluster0-5bk5n.mongodb.net/test?retryWrites=true&w=majority")
-mongoose.connect("mongodb+srv://parth123:parth123@cluster0-5bk5n.mongodb.net/test?retryWrites=true&w=majority" , {
+mongoose.connect(databaseUri , {
 	useNewUrlParser: true,
 	useCreateIndex: true
 })
